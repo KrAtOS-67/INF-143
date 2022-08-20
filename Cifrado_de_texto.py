@@ -1,0 +1,36 @@
+from sys import stdin,stdout
+#from itertools import combinations
+#from itertools import chain, combinations
+#import gmpy2
+#import math
+# from multiset import * 
+# from math import ceil
+# import math
+#from collections import deque
+# from heapq import heappush,heappop
+Pi = lambda x: stdout.write(str(x) + '\n')
+Ps = lambda x: stdout.write(str(x))
+R = lambda:stdin.readline()
+Ri = lambda x:map(int,x.split())
+Rs = lambda x:map(str,x.split())
+Rf = lambda x:map(float,x.split())
+char = lambda x,y:ord(x) - ord(y) 
+gcd = lambda a,b: a if b==0 else gcd(b, a%b) 
+lcm = lambda a,b: a * b // gcd(a, b)
+#ejer = lambda a,i,vocales: stdout.write(f"Case #{i+1}: {a} is ruled by Alice.\n") if a[len(a)-1] in vocales else stdout.write(f"Case #{i+1}: {a} is ruled by Bob.\n")
+Matriz = lambda n,m:[[0 for i in range(m)]for i in range(n)]
+MaxN = int(1e5) + 10
+mod = int(1e9) + 7
+fx,fy = [0,0,-1,1],[1,-1,0,0] #matriz dere izq arri abaj    
+def main():
+    for en in stdin:
+        n=en.strip()
+        vec=[]
+        for i in n:
+            k=format(ord(i), 'b')
+            k='0'*(8%len(k))+k
+            k=k[len(k)//2:len(k)]+k[0:len(k)//2]
+            vec.append(int(k,2))
+        print(*vec)
+if __name__ == '__main__':
+        main()
